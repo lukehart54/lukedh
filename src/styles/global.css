@@ -20,6 +20,21 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+  body {
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+  }
+  /* Newsreader runs small and open; headings need tightening to hold together. */
+  h1,
+  h2,
+  h3 {
+    @apply tracking-[-0.015em];
+  }
+}
+
+/* Metadata voice: dates, tags, nav, labels. Small, spaced, quiet. */
+@utility meta {
+  @apply text-muted-foreground font-mono text-xs tracking-[0.08em] uppercase;
 }
 
 @utility max-w-app {
@@ -30,8 +45,9 @@
   @apply max-w-app mx-auto w-full px-4;
 }
 
+/* Accent earns one job in the resting state: marking where you are. */
 @utility active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-8;
+  @apply text-accent decoration-accent underline decoration-2 underline-offset-8;
 }
 
 :target {

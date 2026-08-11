@@ -68,6 +68,15 @@ export default defineConfig({
       styles: ["normal", "italic"],
       formats: ["woff", "ttf"],
     },
+    {
+      name: "Newsreader",
+      cssVariable: "--font-newsreader",
+      provider: fontProviders.google(),
+      fallbacks: ["Georgia", "serif"],
+      weights: [400, 500, 600, 700],
+      styles: ["normal", "italic"],
+      formats: ["woff", "ttf"],
+    },
   ],
   env: {
     schema: {

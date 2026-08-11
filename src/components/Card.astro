@@ -1,8 +1,14 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { toTransitionName } from "@/utils/toTransitionName";
-import Datetime from "./Datetime.astro";
+import config from "@/config";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 type Props = {
   variant?: "h2" | "h3";
@@ -10,22 +16,32 @@ type Props = {
 
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
-const { title, description, ...props } = data;
+const { title, description, pubDatetime, timezone: postTimezone } = data;
+
+// The index is a chronological ledger, so the date leads each row.
+// Modified dates belong on the post itself, not in the index.
+const datetime = dayjs(pubDatetime).tz(postTimezone ?? config.site.timezone);
 ---
 
-<li class="my-6">
+<li class="group border-border border-b last:border-b-0">
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
-    class:list={[
-      "text-accent inline-block text-lg font-medium",
-      "decoration-dashed underline-offset-4 hover:underline",
-      "focus-visible:no-underline focus-visible:underline-offset-0",
-    ]}
+    class="focus-visible:outline-accent block py-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dashed sm:grid sm:grid-cols-[7.5rem_1fr] sm:gap-x-8"
   >
-    <Heading transition:name={toTransitionName(id)}>
-      {title}
-    </Heading>
+    <time
+      class="meta block pt-1.5 tabular-nums"
+      datetime={datetime.toISOString()}
+    >
+      {datetime.format("DD MMM YYYY")}
+    </time>
+    <div class="max-sm:mt-2">
+      <Heading
+        transition:name={toTransitionName(id)}
+        class="group-hover:text-accent text-xl leading-snug font-medium transition-colors"
+      >
+        {title}
+      </Heading>
+      <p class="text-muted-foreground mt-1.5 leading-relaxed">{description}</p>
+    </div>
   </a>
-  <Datetime {...props} />
-  <p>{description}</p>
 </li>

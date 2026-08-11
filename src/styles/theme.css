@@ -7,28 +7,34 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --font-app: var(--font-google-sans-code);
+
+  /* Two roles, held apart deliberately:
+     `prose` is the reading voice, `mono` is metadata the machine knows
+     (dates, tags, nav, code). Don't mix them. */
+  --font-prose: var(--font-newsreader);
+  --font-mono: var(--font-google-sans-code);
+  --font-app: var(--font-newsreader);
 }
 
 /* Light theme values */
 :root,
 [data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
+  --background: #fcfcfa;
+  --foreground: #1b1b1f;
+  --accent: #2f6f4e;
   --accent-foreground: #ffffff;
-  --muted: #e6e6e6;
-  --muted-foreground: #6b7280;
-  --border: #ece9e9;
+  --muted: #f0f0ec;
+  --muted-foreground: #6a6a66;
+  --border: #e3e3dd;
 }
 
 /* Dark theme values */
 [data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --accent-foreground: #ffffff;
-  --muted: #343f60;
-  --muted-foreground: #afb9ca;
-  --border: #ab4b08;
+  --background: #14161a;
+  --foreground: #e8e8e3;
+  --accent: #8cc29c;
+  --accent-foreground: #14161a;
+  --muted: #22252b;
+  --muted-foreground: #9b9ea3;
+  --border: #2a2e35;
 }
