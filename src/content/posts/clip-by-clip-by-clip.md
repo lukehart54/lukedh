@@ -30,7 +30,7 @@ So, I fired up Claude Code and put the new Opus 5.5 model to work. My very first
 
 ![A game recap saved as a PDF next to its box score exported as a CSV spreadsheet](../../assets/images/clip-by-clip-by-clip/4-recap-boxscore.png)
 
-The end result is **Clip Saver for GameChanger (Unofficial)**. By the numbers, it came out to about 2,700 lines of code over 11 commits, all between Saturday evening and Sunday evening (not counting the two libraries it bundles for the video and PDF work). Everything runs right in your browser: the video conversion, the PDFs, the spreadsheets, all of it. There's no server anywhere, no account, and no tracking; your download history just stays on your own computer.
+The end result is **[Clip Saver for GameChanger (Unofficial)](https://chromewebstore.google.com/detail/pmlfnaeaelpgodjjjcbfffemgghafhjc)**. By the numbers, it came out to about 2,700 lines of code over 11 commits, all between Saturday evening and Sunday evening (not counting the two libraries it bundles for the video and PDF work). Everything runs right in your browser: the video conversion, the PDFs, the spreadsheets, all of it. There's no server anywhere, no account, and no tracking; your download history just stays on your own computer.
 
 When you download a whole season, it writes the zip straight to your hard drive as each clip finishes instead of holding everything in memory.
 
@@ -50,9 +50,9 @@ Before putting this on the store, I had Claude actually read GameChanger's Terms
 
 I still have some minor improvements I would like to add. Clip Saver only handles highlight clips right now; full game videos aren't supported yet (the account I was using did not have any full games saved, and a file that large would need a different approach than the clips use). If you need full games, there are already some **free**, battle-tested general video downloaders, [Stream Recorder](https://chromewebstore.google.com/detail/stream-recorder-hls-m3u8/iogidnfllpdhagebkblkgbfijkbkjdmm) and [FetchV](https://chromewebstore.google.com/detail/fetchv-video-downloader-f/nfmmmhanepmpifddlkkmihkalkoekpfd) being the two most popular I came across. Just note that on the website, full game videos are only visible to team staff, so those tools can only grab a game if you can already watch it. I would also like to update some of the UI, as the download button is not very obvious to the user.
 
-I paid my $5 fee to register a developer account on the Chrome Web Store, and if all goes well, my extension will be approved soon and everyone will be able to enjoy a **free** improvement to downloading their GameChanger videos!
+I paid my $5 fee to register a developer account on the Chrome Web Store, and my extension has been approved, so everyone can now enjoy a **free** improvement to downloading their GameChanger videos!
 
-Once the store approves it, I will add a link here for all to enjoy!
+You can grab [Clip Saver for GameChanger](https://chromewebstore.google.com/detail/pmlfnaeaelpgodjjjcbfffemgghafhjc) on the Chrome Web Store now!
 
 Thanks for reading if you made it this far!
 
