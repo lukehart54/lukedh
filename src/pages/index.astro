@@ -23,9 +23,26 @@ const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 const homePath = getRelativeLocaleUrl(locale, "");
+
+// Tells search engines this site belongs to the author and links their profiles.
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: config.site.author,
+  url: config.site.url,
+  sameAs: config.socials
+    .map(({ url }) => url)
+    .filter(url => !url.startsWith("mailto:")),
+};
 ---
 
 <Layout>
+  <script
+    slot="head"
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(structuredData)}
+  />
   <Header />
   <main
     id="main-content"

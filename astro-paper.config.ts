@@ -28,7 +28,10 @@ export default defineAstroPaperConfig({
     },
     search: "pagefind",
   },
-  socials: [{ name: "github", url: "https://github.com/lukehart54" }],
+  socials: [
+    { name: "github", url: "https://github.com/lukehart54" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/luke-hartley7/" },
+  ],
   // No share buttons — a personal blog doesn't need a row of social widgets.
   shareLinks: [],
 });
